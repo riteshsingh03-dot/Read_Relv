@@ -8,11 +8,14 @@
         <h1>Read-Relv</h1>
         <h4>Read your articles in a minimal, distraction free format</h4>
 
-        <input type = "text" placeholder = "Place article URL here">
+        <form method = "POST" action = "/extract">
+            <input type = "text" name = "url" placeholder = "Place article URL here">
 
-        <button>
+        <button type = "submit">
             Extract
         </button>
+
+        </form>
 
         <script src = "{{ url_for( 'static', filename = 'script.js') }}"></script>
     </body>

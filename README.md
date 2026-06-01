@@ -5,4 +5,5 @@ Minimal Read Mode for artiicle websites.
 Better version of my previous hardcoded Read Mode project.<p>
 
 <p>Starting it...<br>
-Added Basic file structure and added working basic starting flask implementation<p>
+Added Basic file structure and added working basic starting flask implementation<br>
+Made Simple form structure that passes the url to the backend.<p>
