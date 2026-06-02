@@ -32,3 +32,14 @@ I have to primarily debug it and improve it by testing on various article websit
 then<br>
 I have to format it and make it look better.<br>
 <p>
+
+<p>
+While extracting and formatting the data I found an ineteresting bug,<br>
+in this the content repeats multiple times, which I figured it out myself reason being that the find_all fetches and brings the nested text each time it spots the searches I put in the blocks list.<br>
+To solve it I can simply make a seen named container which checks if the content is already been there or not.<br>
+<br>
+Now that I almost fixed extraction part the whole content is coming in a single line, now gotta figure out the reason behind it.<br>
+I get it why it failed working, the thing is that I am fetching the parent and child content in such a way it breaks my if else formatting logic in the extractContent function as I have already fetched the blocks in the parent so it ignores it when the code comes to the actual block to prevent duplication<br>
+Its the troubling part of nested nested divisions and content.<br>
+Still finding out a way to fix it<br>
+<p>

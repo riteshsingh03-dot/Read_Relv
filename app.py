@@ -78,7 +78,7 @@ def bestCandidate(candidates):
 
         print(score)
         print(candidate.name)
-        print(candidate.get_text(strip = True)[:100])
+        print(candidate.get_text(strip = True)[:400])
         print("-" * 50)
 
         if score > bestScore:
@@ -86,6 +86,38 @@ def bestCandidate(candidates):
             bestSection = candidate
 
     return bestSection
+
+def extractContent(best):
+
+    blocks = best.find_all(["div", "p", "pre", "article", "section", "main", "h1", "h2", "h3", "h4", "h5", "h6"])
+    content = ""
+
+    seen = set()
+    contentParts = []
+
+    for block in blocks:
+
+        text = block.get_text(separator = "\n\n")
+        if not text or text in seen:
+            continue
+
+        if any(text in parent for parent in seen):
+            continue
+
+        seen.add(text)
+        
+        if block.name == "pre":
+            contentParts.append("\n\n" + text + "\n\n")
+
+        elif block.name in ["h1", "h2", "h3"]:
+            contentParts.append("\n" + text.upper() + "\n")
+
+        else:
+            contentParts.append("\n" + text + "\n")
+
+
+    return "\n".join(contentParts)
+
 
 
 
@@ -109,7 +141,7 @@ def extract():
     best = bestCandidate(sections)
 
     if best:
-        content = best.get_text()
+        content = extractContent(best)
     else:
         content = "No readable content found"
 
