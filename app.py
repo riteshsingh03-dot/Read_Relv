@@ -89,7 +89,7 @@ def bestCandidate(candidates):
 
 def extractContent(best):
 
-    blocks = best.find_all(["div", "p", "pre", "article", "section", "main", "h1", "h2", "h3", "h4", "h5", "h6"])
+    blocks = best.find_all(["li", "div", "p", "pre", "article", "section", "main", "h1", "h2", "h3", "h4", "h5", "h6"])
     content = ""
 
     seen = set()
@@ -97,15 +97,19 @@ def extractContent(best):
 
     for block in blocks:
 
-        text = block.get_text(separator = "\n\n")
-        if not text or text in seen:
+        if block.name == "pre":
+            text = block.get_text(strip = False)
+
+        else:
+            text = block.get_text(separator = "\n\n", strip = True)
+
+        if not text:
             continue
 
-        if any(text in parent for parent in seen):
+        if text in seen:
             continue
-
         seen.add(text)
-        
+
         if block.name == "pre":
             contentParts.append("\n\n" + text + "\n\n")
 
@@ -114,8 +118,7 @@ def extractContent(best):
 
         else:
             contentParts.append("\n" + text + "\n")
-
-
+        
     return "\n".join(contentParts)
 
 

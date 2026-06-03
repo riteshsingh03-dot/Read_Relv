@@ -43,3 +43,15 @@ I get it why it failed working, the thing is that I am fetching the parent and c
 Its the troubling part of nested nested divisions and content.<br>
 Still finding out a way to fix it<br>
 <p>
+
+<p>
+I get it, here comes the problem, even in div and pre blocks<br>
+some websites write words of sentences in individual spans or divs<br>
+I am not able to figure out a way out of it, if I make it such that it fetches only parent's content and neglects its child for fetching it again in the same loop as per keywords, content may get missed as it is not necessary that I would have included the keyword for the child.<br>
+So this way I am balancing formatting and content extraction, due to this multiple spans and div nested together, the formatting is breaking and adding extra line gaps between word of the same line but written in diff containers.<br>
+<p>
+
+<p>
+I am gonna leave this for now, as trying new things is breaking it more rather than solving the problem.<br>
+I am going to start CSS styling now.<br>
+<p>
