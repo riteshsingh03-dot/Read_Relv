@@ -2,18 +2,21 @@
 <html>
     <head>
         <title>Read-Relv</title>
-        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'style.css') }}">
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'style1.css') }}">
     </head>
     <body>
         <h1>Read-Relv</h1>
         <h4>Read your articles in a minimal, distraction free format</h4>
         <p>
             Kindly use simple article websites for optimal experience.<br>
-            Doesn't works for wikipedia pages, as wiki doesn't allow direct web scraping.
+            Doesn't works for wikipedia pages, as wiki doesn't allow direct web scraping.<br>
+            May not work properly on all websites<br><br>
         </p>
 
         <form method = "POST" action = "/extract">
             <input type = "text" name = "url" placeholder = "Place article URL here">
+
+            <br>
 
         <button type = "submit">
             Extract

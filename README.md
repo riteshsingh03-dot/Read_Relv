@@ -53,5 +53,23 @@ So this way I am balancing formatting and content extraction, due to this multip
 
 <p>
 I am gonna leave this for now, as trying new things is breaking it more rather than solving the problem.<br>
+<p>
+
+<p>
 I am going to start CSS styling now.<br>
+It is always there in CSS, fixing one thing, completely breaks thw whole thing, and I don't get it why.<br>
+Then when I find the reason, the previous problem comes again.<br>
+Took a way around with it and did it finally.
+<p>
+
+<p>
+I am not at all satisfied with this project<br>
+But, I think I am done with this project for now<br>
+There are some major issues in extraction and styling.<br>
+Will improve it in future, but not now<br>
+It's Initial Phase is complete I guess.<br>
+<p>
+
+<p>
+Thanks
 <p>
